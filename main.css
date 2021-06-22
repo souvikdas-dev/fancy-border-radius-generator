@@ -23,7 +23,25 @@ header>hr {
 
 #header-links a {
     color: #f00;
-    font-size: 1rem;
+    font-size: 0.8rem;
+}
+
+#header-links a .fa-quidditch {
+    color: #ff6b6b;
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+#header-links a .fa-github {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+#header-links a .fa-skull {
+    color: #ff6b6b;
+    font-size: 1.2rem;
+    margin-right: 5px;
 }
 
 #test {
