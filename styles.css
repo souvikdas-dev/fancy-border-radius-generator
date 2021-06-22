@@ -1,0 +1,35 @@
+#custom_size {
+    width: 650px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    color: #fff;
+    font-size: 1.3rem;
+    /* border: 2px solid red; */
+}
+
+.advanced__switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.advanced__settings {
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#dimension-input {
+    visibility: visible;
+    /* visibility: hidden; */
+}
+
+#width, #height {
+    font-size: 1.3rem;
+    width: 70px;
+    margin-left: 10px;
+}
