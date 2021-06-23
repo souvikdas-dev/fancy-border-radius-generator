@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="fancy-logo.png" type="image/x-icon">
     <title>Border-radius-Generator</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="fcmain.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -71,16 +71,20 @@
             <a href="#"><i class="fas fa-quidditch"></i> About This</a>
             <a href="https://github.com/SouvikDas-git/fancy-border-radius-generator"><i class="fab fa-github icn"></i>
                 View on Github </a>
-            <a href="full-controll.html"><i class="fas fa-skull"></i> Full Controll </a>
+            <a href="#"><i class="fas fa-skull"></i> Full Controll </a>
         </div>
     </header>
 
     <div id="generator">
         <div id="box"></div>
-        <input type="range" name="" id="left" class="slider" min="0" max="100" oninput="setborder()">
-        <input type="range" name="" id="top" class="slider" min="0" max="100" oninput="setborder()">
-        <input type="range" name="" id="right" class="slider" min="0" max="100" oninput="setborder()">
-        <input type="range" name="" id="bottom" class="slider" min="0" max="100" oninput="setborder()">
+        <input type="range" name="" id="top-left" class="top slider" min="0" max="100" value="20" oninput="setborder()">
+        <input type="range" name="" id="top-right" class="top slider" min="0" max="100" value="20" oninput="setborder()">
+        <input type="range" name="" id="bottom-left" class="bottom slider" min="0" max="100" value="20" oninput="setborder()">
+        <input type="range" name="" id="bottom-right" class="bottom slider" min="0" max="100" value="20" oninput="setborder()">
+        <input type="range" name="" id="left-top" class="left slider" min="0" max="100" value="20" oninput="setborder()">
+        <input type="range" name="" id="left-bottom" class="left slider" min="0" max="100" value="20" oninput="setborder()">
+        <input type="range" name="" id="right-top" class="right slider" min="0" max="100" value="20" oninput="setborder()">
+        <input type="range" name="" id="right-bottom" class="right slider" min="0" max="100" value="20" oninput="setborder()">
     </div>
     <p id="test"></p>
     <div id="output">
@@ -112,36 +116,23 @@
     <script>
         const generator = document.getElementById("generator");
         const Box = document.getElementById("box");
-        const leftslider = document.getElementById("left");
-        const topslider = document.getElementById("top");
-        const rightslider = document.getElementById("right");
-        const bottomslider = document.getElementById("bottom");
+        const topleft = document.getElementById("top-left");
+        const topright = document.getElementById("top-right");
+        const bottomleft = document.getElementById("bottom-left");
+        const bottomright = document.getElementById("bottom-right");
+        const lefttop = document.getElementById("left-top");
+        const leftbottom = document.getElementById("left-bottom");
+        const righttop = document.getElementById("right-top");
+        const rightbottom = document.getElementById("right-bottom");
         var rad;
         var output_text = document.getElementById("output-text");
-        Randomrad();
         setborder();
         function setborder() {
             // rad = leftslider.value + '% ' + topslider.value + '% ' + rightslider.value + '% ' + bottomslider.value + '%';
-            rad = topslider.value + '% ' + (100 - topslider.value) + '% ' + (100 - bottomslider.value) + '% ' + bottomslider.value + '% ' + '/ ' + leftslider.value + '% ' + rightslider.value + '% ' + (100 - rightslider.value) + '% ' + (100 - leftslider.value) + '%';
+            rad = topleft.value + '% ' + topright.value + '% ' + bottomright.value + '% ' + bottomleft.value + '% ' + '/ ' + lefttop.value + '% ' + righttop.value + '% ' + rightbottom.value + '% ' + leftbottom.value + '%';
             output_text.innerHTML = "border-radius: " + rad + ";";
             // box.style.borderRadius = rad;
             Box.style.borderRadius = rad;
-        }
-        function SetCusSize() {
-
-        }
-        // Function to generate random number 
-        function randomNo(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        // Function to generate random border-Radius
-        function Randomrad() {
-            leftslider.value = randomNo(0, 100);
-            topslider.value = randomNo(0, 100);
-            rightslider.value = randomNo(0, 100);
-            bottomslider.value = randomNo(0, 100);
         }
         copy = () => {
             navigator.clipboard.writeText(output_text.innerHTML);
@@ -171,10 +162,10 @@
             var box_height = document.getElementById("height");
             generator.style.width = box_width.value + 'px';
             generator.style.height = box_height.value + 'px';
-            topslider.style.width = (parseInt(box_width.value) + 17) + 'px';
-            bottomslider.style.width = (parseInt(box_width.value) + 17) + 'px';
-            leftslider.style.width = (parseInt(box_height.value) + 17) + 'px';
-            rightslider.style.width = (parseInt(box_height.value) + 17) + 'px';
+            // document.getElementsByClassName("top").style.width = (parseInt(box_width.value) + 17) + 'px';
+            // document.getElementsByClassName("bottom").style.width = (parseInt(box_width.value) + 17) + 'px';
+            // document.getElementsByClassName("left").style.width = (parseInt(box_height.value) + 17) + 'px';
+            // document.getElementsByClassName("right").style.width = (parseInt(box_height.value) + 17) + 'px';
         }
     </script>
 
