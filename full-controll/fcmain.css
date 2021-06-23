@@ -17,7 +17,8 @@ header>hr {
 
 #header-links {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
     margin-top: 7px;
 }
 
@@ -144,7 +145,7 @@ header>hr {
     -webkit-appearance: none;
     pointer-events: none;
     width: calc(100% + 17px);
-    height: 3px;
+    height: 0px;
     outline: none;
     z-index: 5;
 }
@@ -161,6 +162,7 @@ header>hr {
     cursor: pointer;
     background-color: #fff;
     transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 .slider::-webkit-slider-thumb:hover, .slider::-webkit-slider-thumb:active {
