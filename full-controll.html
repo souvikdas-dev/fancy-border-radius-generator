@@ -11,14 +11,15 @@
     <link rel="icon" href="fancy-logo.png" type="image/x-icon">
     <title>Border-radius-Generator</title>
     <link rel="stylesheet" href="fcmain.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="switch.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b4acdcaab8.js" crossorigin="anonymous"></script>
+    <script src="fcscript.js"></script>
 
     <style>
         :root {
@@ -45,8 +46,8 @@
 
         body {
             position: relative;
-            height: 100vh;
-            width: 100vw;
+            min-height: 100vh;
+            min-width: 100vw;
             /* border: 2px solid red; */
             /* background-color: rgba(0, 0, 0, .85); */
             background-color: #202032;
@@ -59,6 +60,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
+            flex-grow: 1;
         }
     </style>
 </head>
@@ -77,14 +79,21 @@
 
     <div id="generator">
         <div id="box"></div>
-        <input type="range" name="" id="top-left" class="top slider" min="0" max="100" value="20" oninput="setborder()">
-        <input type="range" name="" id="top-right" class="top slider" min="0" max="100" value="20" oninput="setborder()">
-        <input type="range" name="" id="bottom-left" class="bottom slider" min="0" max="100" value="20" oninput="setborder()">
-        <input type="range" name="" id="bottom-right" class="bottom slider" min="0" max="100" value="20" oninput="setborder()">
-        <input type="range" name="" id="left-top" class="left slider" min="0" max="100" value="20" oninput="setborder()">
-        <input type="range" name="" id="left-bottom" class="left slider" min="0" max="100" value="20" oninput="setborder()">
-        <input type="range" name="" id="right-top" class="right slider" min="0" max="100" value="20" oninput="setborder()">
-        <input type="range" name="" id="right-bottom" class="right slider" min="0" max="100" value="20" oninput="setborder()">
+        <input type="range" name="" id="top-left" class="top slider" min="0" max="100" value="15" oninput="setborder()">
+        <input type="range" name="" id="top-right" class="top slider" min="0" max="100" value="15"
+            oninput="setborder()">
+        <input type="range" name="" id="bottom-left" class="bottom slider" min="0" max="100" value="15"
+            oninput="setborder()">
+        <input type="range" name="" id="bottom-right" class="bottom slider" min="0" max="100" value="15"
+            oninput="setborder()">
+        <input type="range" name="" id="left-top" class="left slider" min="0" max="100" value="15"
+            oninput="setborder()">
+        <input type="range" name="" id="left-bottom" class="left slider" min="0" max="100" value="15"
+            oninput="setborder()">
+        <input type="range" name="" id="right-top" class="right slider" min="0" max="100" value="15"
+            oninput="setborder()">
+        <input type="range" name="" id="right-bottom" class="right slider" min="0" max="100" value="15"
+            oninput="setborder()">
     </div>
     <p id="test"></p>
     <div id="output">
@@ -96,7 +105,7 @@
         <div class="advanced__switch">
             <span> Custom Size : </span>
             <label class="switch">
-                <input type="checkbox" checked onclick="custom_mode()">
+                <input type="checkbox" onclick="custom_mode()">
                 <span class="switch-slider"></span>
             </label>
         </div>
@@ -145,28 +154,6 @@
                 }, 1800);
             });
         });
-
-        function custom_mode() {
-            var advanced__settings = document.getElementById("dimension-input");
-            if (advanced__settings.style.visibility == "hidden") {
-                advanced__settings.style.visibility = "visible";
-            }
-            else {
-                advanced__settings.style.visibility = "hidden";
-            }
-
-
-        }
-        function custom_size() {
-            var box_width = document.getElementById("width");
-            var box_height = document.getElementById("height");
-            generator.style.width = box_width.value + 'px';
-            generator.style.height = box_height.value + 'px';
-            // document.getElementsByClassName("top").style.width = (parseInt(box_width.value) + 17) + 'px';
-            // document.getElementsByClassName("bottom").style.width = (parseInt(box_width.value) + 17) + 'px';
-            // document.getElementsByClassName("left").style.width = (parseInt(box_height.value) + 17) + 'px';
-            // document.getElementsByClassName("right").style.width = (parseInt(box_height.value) + 17) + 'px';
-        }
     </script>
 
     <footer> Made with <span> ❤ </span> by Souvik</footer>
