@@ -59,7 +59,7 @@ header>hr {
     /* max-height: 500px; */
     width: 470px;
     /* max-width: 500px; */
-    margin: 1rem 0px;
+    margin: 1rem 2rem;
     border: 2px dashed rgba(255, 255, 255, .45);
     /* z-index: 8; */
     /* margin: 0 auto; */
@@ -275,13 +275,14 @@ header>hr {
 
 footer {
     position: absolute;
+    /* top: 100%; */
     bottom: 0px;
     width: 100%;
     padding: 7px;
     text-align: center;
     background: #00FEFE;
     background-color: #232343;
-    color: #fff;
+    /* color: #fff; */
     color: #d0d0d0;
     font-size: .7rem;
     word-spacing: 3px;

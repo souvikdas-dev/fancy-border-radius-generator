@@ -45,9 +45,10 @@
         }
 
         body {
-            position: relative;
+            position: absolute;
             min-height: 100vh;
-            min-width: 100vw;
+            /* min-width: 100vw; */
+            width: 100%;
             /* border: 2px solid red; */
             /* background-color: rgba(0, 0, 0, .85); */
             background-color: #202032;
@@ -58,6 +59,7 @@
             /* align-items to center */
             display: flex;
             flex-direction: column;
+            flex-wrap: nowrap;
             align-items: center;
             justify-content: space-evenly;
             flex-grow: 1;
